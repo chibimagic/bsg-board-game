@@ -25,7 +25,7 @@ class Viper < ShipToken
   end
   
   def is_manned?
-    @player.nil? false : true
+    @player.nil? ? false : true
   end
 
   def is_damaged?
