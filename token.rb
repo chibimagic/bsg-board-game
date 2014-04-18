@@ -115,7 +115,7 @@ class GalacticaDamageToken < DamageToken
   TITLE = "Galactica Damage Token"
 end
 
-class CivilianShipDamageToken < DamageToken
+class CivilianShip < DamageToken
   TITLE = "Civilian Ship"
 end
 

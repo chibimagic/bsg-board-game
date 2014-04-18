@@ -89,7 +89,7 @@ class GalacticaDamageReserves < DamageTokenReserves
 end
 
 class CivilianShipReserves < DamageTokenReserves
-  TOKEN_CLASS = CivilianShipDamageToken
+  TOKEN_CLASS = CivilianShip
   
   TO_DAMAGE_CLASSES = [
     [],
