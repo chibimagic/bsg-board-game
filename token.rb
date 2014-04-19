@@ -61,7 +61,7 @@ class Basestar < ShipToken
   attr_reader \
     :damage_tokens, \
     :can_launch_ships, \
-    :can_attach_galactica, \
+    :can_attack_galactica, \
     :structural_damage
   
   TITLE = "Basestar"
@@ -71,7 +71,7 @@ class Basestar < ShipToken
     @damage_tokens = []
     @can_launch_ships = true
     @can_attack_galactica = true
-    @structual_damage = false
+    @structural_damage = false
   end
   
   def damage
