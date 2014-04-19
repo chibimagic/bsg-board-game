@@ -76,7 +76,7 @@ class Basestar < ShipToken
   
   def damage
     damage = @damage_tokens.count
-    if @damage_tokens.include? :critical_hit
+    if @damage_tokens.any? { |token| token.to_damage_class == :critical_hit }
       damage += 1
     end
     damage
