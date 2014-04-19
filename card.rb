@@ -1,5 +1,6 @@
 class Card
   TITLE = ''
+  QUOTE = ''
   BODY = ''
   
   def to_s
@@ -10,8 +11,16 @@ class Card
     self.class::TITLE
   end
   
+  self quote
+    self.class::QUOTE
+  end
+  
   def body
     self.class::BODY
+  end
+  
+  def has_action?
+    self.class.const_defined? "ACTION_TEXT"
   end
 end
 
