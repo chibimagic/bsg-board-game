@@ -12,6 +12,8 @@ class ShipToken < Token
 end
 
 class Viper < ShipToken
+  attr_reader :damaged
+  
   TITLE = "Viper"
   def initialize(game, player = nil)
     super(game)
@@ -20,23 +22,19 @@ class Viper < ShipToken
   end
   
   def to_s
-    pilot = is_manned? ? @player.to_s : 'unmanned'
+    pilot = manned? ? @player.to_s : 'unmanned'
     self.class::TITLE + ' (' + pilot + ')'
   end
   
-  def is_manned?
+  def manned?
     @player.nil? ? false : true
   end
-
-  def is_damaged?
-    @damaged
-  end
   
-  def damage
+  def damage!
     @damaged = true
   end
   
-  def repair
+  def repair!
     @damaged = false
   end
 end
@@ -82,11 +80,11 @@ class Basestar < ShipToken
     damage
   end
   
-  def is_damaged?
+  def damaged?
     damage > 0
   end
   
-  def damage_with_token(damage_token)
+  def damage_with_token!(damage_token)
     @damage_tokens.push(damage_token)
     
     case damage_token.to_damage_class
