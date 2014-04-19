@@ -11,7 +11,7 @@ class Card
     self.class::TITLE
   end
   
-  self quote
+  def quote
     self.class::QUOTE
   end
   
