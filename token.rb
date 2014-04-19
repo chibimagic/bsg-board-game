@@ -84,6 +84,10 @@ class Basestar < ShipToken
     damage > 0
   end
   
+  def should_be_destroyed?
+    damage >= 3
+  end
+  
   def damage_with_token!(damage_token)
     @damage_tokens.push(damage_token)
     
